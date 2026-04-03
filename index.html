@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Écosystème Global Industrie 2026, 13 Schémas</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{--bg:#0c0e14;--s1:#161923;--s2:#1e2231;--s3:#262b3d;--bd:#2a3050;--t:#e2e5f0;--t2:#8892b3;--t3:#5c6488;--a1:#6c8aff;--a2:#ff6b8a;--a3:#50d890;--a4:#ffb86c;--a5:#bd93f9;--a6:#8be9fd;--a7:#ff79c6;--a8:#f1fa8c;--a9:#66d9ef;--a10:#a6e22e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t);font-family:'DM Sans',sans-serif;line-height:1.6}
+.top{padding:2rem 2rem 0}
+h1{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--a1),var(--a5),var(--a7));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.3rem}
+.sub{color:var(--t2);font-size:.9rem;margin-bottom:1.5rem}
+.nav{display:flex;flex-wrap:wrap;gap:.4rem;padding:.8rem 2rem;position:sticky;top:0;background:rgba(12,14,20,.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid var(--bd)}
+.nav button{background:var(--s1);border:1px solid var(--bd);color:var(--t2);padding:.4rem .8rem;border-radius:8px;cursor:pointer;font-family:inherit;font-size:.78rem;font-weight:500;transition:all .2s;white-space:nowrap}
+.nav button:hover{border-color:var(--a1);color:var(--t)}
+.nav button.on{background:var(--a1);border-color:var(--a1);color:#fff}
+.sc{display:none;padding:2rem;animation:fi .35s ease}
+.sc.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.st{font-size:1.35rem;font-weight:700;margin-bottom:.4rem}
+.sd{color:var(--t2);margin-bottom:2rem;max-width:750px;font-size:.9rem;line-height:1.7}
+.sd strong{color:var(--t)}
+.chip{display:inline-block;padding:.15rem .55rem;border-radius:5px;font-size:.7rem;font-family:'DM Mono',monospace;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);color:var(--t2);margin:.15rem}
+.tag{display:inline-block;padding:.2rem .6rem;border-radius:6px;font-size:.75rem;font-weight:500}
+.nb{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.2rem;margin-top:1.5rem;font-size:.85rem;color:var(--t2);max-width:750px}
+.nb strong{color:var(--t)}
+/* LAYERS */
+.layers{display:flex;flex-direction:column;max-width:920px}
+.ly{padding:1.4rem 1.8rem;border:1px solid var(--bd);display:flex;align-items:flex-start;gap:1.2rem}
+.ly:first-child{border-radius:14px 14px 0 0}.ly:last-child{border-radius:0 0 14px 14px}.ly+.ly{border-top:none}
+.ln{min-width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+.lc{flex:1}.lc h3{font-weight:700;font-size:1rem;margin-bottom:.15rem}.lm{font-size:.78rem;margin-bottom:.15rem}.lr{color:var(--t2);font-size:.82rem;margin-bottom:.5rem;font-style:italic}.lp{display:flex;flex-wrap:wrap;gap:.25rem}
+.l1{background:rgba(255,107,138,.06)}.l1 .ln{background:var(--a2);color:#fff}.l1 h3{color:var(--a2)}.l1 .chip{border-color:rgba(255,107,138,.2);color:var(--a2)}
+.l2{background:rgba(255,184,108,.06)}.l2 .ln{background:var(--a4);color:#000}.l2 h3{color:var(--a4)}.l2 .chip{border-color:rgba(255,184,108,.2);color:var(--a4)}
+.l3{background:rgba(139,233,253,.06)}.l3 .ln{background:var(--a6);color:#000}.l3 h3{color:var(--a6)}.l3 .chip{border-color:rgba(139,233,253,.2);color:var(--a6)}
+.l4{background:rgba(189,147,249,.06)}.l4 .ln{background:var(--a5);color:#fff}.l4 h3{color:var(--a5)}.l4 .chip{border-color:rgba(189,147,249,.2);color:var(--a5)}
+.l5{background:rgba(80,216,144,.06)}.l5 .ln{background:var(--a3);color:#000}.l5 h3{color:var(--a3)}.l5 .chip{border-color:rgba(80,216,144,.2);color:var(--a3)}
+.l6{background:rgba(108,138,255,.06)}.l6 .ln{background:var(--a1);color:#fff}.l6 h3{color:var(--a1)}.l6 .chip{border-color:rgba(108,138,255,.2);color:var(--a1)}
+.ll{display:flex;justify-content:space-between;max-width:920px;margin-top:.8rem;font-size:.75rem;color:var(--t3)}
+/* CHAIN */
+.ch{display:flex;gap:0;overflow-x:auto;padding-bottom:1rem}
+.cs{min-width:130px;padding:1.2rem .7rem;text-align:center;background:var(--s1);border:1px solid var(--bd);margin-right:-1px;flex-shrink:0}
+.cs:first-child{border-radius:12px 0 0 12px}.cs:last-child{border-radius:0 12px 12px 0}
+.ci{font-size:1.8rem;margin-bottom:.4rem}.cl{font-weight:700;font-size:.82rem;margin-bottom:.4rem}.ca{font-size:.65rem;color:var(--t2);font-family:'DM Mono',monospace;line-height:1.6}
+.cha{display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--t3);min-width:20px;flex-shrink:0}
+.csg{margin-top:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;max-width:920px}
+.csc{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem;border-top:3px solid}
+.csl{font-weight:600;font-size:.85rem;margin-bottom:.3rem}.csd{font-size:.73rem;color:var(--t2);margin-bottom:.4rem}
+/* FLOW */
+.fl{max-width:820px}
+.fs{display:flex;gap:1rem;margin-bottom:.5rem;align-items:stretch}
+.fll{min-width:170px;text-align:right;padding-top:1rem;font-size:.72rem;color:var(--t3);font-family:'DM Mono',monospace;line-height:1.5}
+.fln{width:4px;border-radius:4px;flex-shrink:0}
+.fr{flex:1;background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.2rem}
+.frt{font-weight:700;font-size:.92rem;margin-bottom:.2rem}.frd{font-size:.78rem;color:var(--t2);margin-bottom:.4rem}
+.fc{margin-left:178px;width:4px;height:14px;background:var(--bd);border-radius:2px}
+.ffn{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:.6rem;margin-top:.5rem;margin-left:182px}
+.ffc{background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:.8rem;text-align:center;border-top:3px solid}
+.ffi{font-size:1.3rem}.ffl{font-weight:600;font-size:.78rem;margin:.2rem 0}.ffa{font-size:.63rem;color:var(--t2);font-family:'DM Mono',monospace}
+/* HUB */
+.hg{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;max-width:750px}
+.hcc{grid-column:2;grid-row:2;background:linear-gradient(135deg,var(--a1),var(--a5));border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#fff;font-weight:700;font-size:1.1rem;min-height:130px;box-shadow:0 0 40px rgba(108,138,255,.2)}
+.hcc span{font-size:2.5rem}
+.hc{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:.9rem;text-align:center;transition:transform .2s}
+.hc:hover{transform:scale(1.03)}
+.hi{font-size:1.3rem}.hl{font-weight:600;font-size:.76rem;margin:.2rem 0}.ha{font-size:.6rem;color:var(--t2);font-family:'DM Mono',monospace;line-height:1.4}
+/* ARENA */
+.ar{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.8rem;max-width:950px}
+.ac{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem}
+.act{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.5rem}
+.aps{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+.ap{padding:.22rem .55rem;border-radius:6px;font-size:.73rem;font-weight:500;border:1px solid}
+.vs{color:var(--t3);font-size:.6rem;font-style:italic;padding:0 .1rem}
+/* PAIN */
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:.8rem;max-width:950px}
+.pc{background:var(--s1);border-radius:10px;padding:1rem;border-left:4px solid;position:relative}
+.pr{position:absolute;top:.5rem;right:.7rem;font-size:1.8rem;font-weight:700;opacity:.07}
+.pt{font-weight:700;font-size:.88rem;margin-bottom:.3rem}
+.ps{font-size:.76rem;color:var(--t2);margin-bottom:.45rem;line-height:1.5}
+.pw{display:flex;flex-wrap:wrap;gap:.2rem}
+.pp{font-size:.62rem;padding:.1rem .4rem;border-radius:4px;font-family:'DM Mono',monospace}
+/* TIMELINE */
+.tl{max-width:720px;padding-left:44px;position:relative}
+.tl::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--a2),var(--a4),var(--a6),var(--a5),var(--a3),var(--a1));border-radius:3px}
+.ti{position:relative;margin-bottom:1.2rem;padding:1rem 1.1rem;background:var(--s1);border:1px solid var(--bd);border-radius:10px}
+.td{position:absolute;left:-33px;top:1.1rem;width:12px;height:12px;border-radius:50%;border:3px solid var(--bg)}
+.tp{font-size:.63rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.2rem}
+.tt{font-weight:700;font-size:.92rem;margin-bottom:.2rem}
+.tx{font-size:.76rem;color:var(--t2);margin-bottom:.4rem}
+.ta{display:flex;flex-wrap:wrap;gap:.2rem}
+.tc{font-size:.62rem;padding:.1rem .4rem;border-radius:4px;font-family:'DM Mono',monospace;background:rgba(255,255,255,.04);color:var(--t2)}
+/* SCENARIO */
+.sn{max-width:800px}
+.sh{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1.5rem;border-left:4px solid var(--a1)}
+.sht{font-weight:700;font-size:1.05rem;margin-bottom:.3rem}.shd{font-size:.83rem;color:var(--t2)}
+.ss{display:flex;gap:1rem;margin-bottom:.8rem;align-items:flex-start}
+.ssn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.83rem;flex-shrink:0;color:#fff}
+.ssc{flex:1;background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:.9rem 1.1rem}
+.ssw{font-weight:700;font-size:.88rem;margin-bottom:.2rem}.ssy{font-size:.76rem;color:var(--t2);margin-bottom:.35rem}
+/* ROLES */
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:.7rem;max-width:950px}
+.rc{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem;border-top:3px solid}
+.rct{font-weight:700;font-size:.88rem;margin-bottom:.15rem}.rcd{font-size:.73rem;color:var(--t2);margin-bottom:.4rem;font-style:italic}
+/* GLOSSARY */
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:.7rem;max-width:950px}
+.gc{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem;display:flex;gap:.7rem;align-items:flex-start}
+.gci{font-size:1.4rem;flex-shrink:0}.gct{font-weight:700;font-size:.85rem;margin-bottom:.1rem}.gcd{font-size:.76rem;color:var(--t2);line-height:1.5}
+/* COMBOS */
+.co{max-width:850px}
+.cp{background:var(--s1);border:1px solid var(--bd);border-radius:10px;padding:1rem 1.2rem;margin-bottom:.7rem;display:flex;align-items:center;gap:1rem}
+.cpl{min-width:160px;text-align:center}
+.cpp{font-size:1.4rem;color:var(--a3);font-weight:700;flex-shrink:0}
+.cpr{flex:1}
+.cpx{font-size:.8rem;color:var(--t2);margin-top:.3rem;padding-left:.5rem;border-left:2px solid var(--a3)}
+
+/* JOURNEY */
+.jy{max-width:980px}
+.jc{display:flex;gap:1.2rem;align-items:flex-start;background:linear-gradient(180deg,rgba(30,34,49,.9),rgba(22,25,35,.95));border:1px solid var(--bd);border-radius:16px;padding:1.3rem 1.4rem;margin-bottom:1rem;position:relative;overflow:hidden}
+.jc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:16px 0 0 16px;background:var(--jc)}
+.jt{min-width:90px;font-size:1.05rem;font-weight:700;color:var(--jc);padding-top:.15rem}
+.jb{flex:1}
+.jh{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.jd{font-size:.86rem;color:var(--t2);margin-bottom:.45rem;line-height:1.6}
+.jtags{display:flex;flex-wrap:wrap;gap:.35rem}
+.jtag{display:inline-block;padding:.22rem .55rem;border-radius:6px;font-size:.74rem;font-family:'DM Mono',monospace;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--t2)}
+/* BUDGET */
+.bu{max-width:980px}
+.bb{display:flex;overflow:hidden;border-radius:18px;background:var(--s1);border:1px solid var(--bd);margin:1.4rem 0 1.5rem}
+.bs{padding:1rem .7rem;text-align:center;font-weight:700;font-size:.82rem;color:#fff;white-space:nowrap}
+.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.bc{background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:1rem}
+.bcp{font-size:1.9rem;font-weight:700;margin-bottom:.1rem}
+.bct{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.bcd{font-size:.82rem;color:var(--t2);line-height:1.55}
+.bcn{background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:1rem 1.2rem;margin-top:1.5rem;font-size:.92rem;color:var(--t2)}
+.bcn strong{color:var(--t)}
+
+@media(max-width:768px){.nav{gap:.3rem;padding:.5rem 1rem}.nav button{font-size:.68rem;padding:.25rem .4rem}.sc{padding:1rem}.hg{grid-template-columns:1fr}.hcc{grid-column:1;grid-row:auto}.fll{display:none}.fc{margin-left:0}.ffn{margin-left:0}.ch{flex-direction:column}.cs{min-width:auto;border-radius:10px!important;margin-right:0;margin-bottom:.5rem}.cha{transform:rotate(90deg)}.cp{flex-direction:column}.cpl{min-width:auto}.ss{flex-direction:column;gap:.4rem}.ssn{align-self:flex-start}}
+</style>
+</head>
+<body>
+<div class="top"><h1>🏭 Écosystème Global Industrie 2026</h1><p class="sub">13 schémas interactifs pour comprendre l'industrie, même en partant de zéro</p></div>
+<div class="nav" id="nav">
+<button class="on" onclick="S(0)">① Couches</button><button onclick="S(1)">② Chaîne</button><button onclick="S(2)">③ Flux données</button><button onclick="S(3)">④ Hub usine</button><button onclick="S(4)">⑤ Concurrences</button><button onclick="S(5)">⑥ Pain Points</button><button onclick="S(6)">⑦ Timeline</button><button onclick="S(7)">⑧ Scénario</button><button onclick="S(8)">⑨ Rôles</button><button onclick="S(9)">⑩ Glossaire</button><button onclick="S(10)">⑪ Combos</button><button onclick="S(11)">⑫ Journée</button><button onclick="S(12)">⑬ Budget</button>
+</div>
+
+<!-- 1 COUCHES -->
+<div class="sc on" id="s0">
+<div class="st">① Les 6 couches d'une usine connectée</div>
+<p class="sd">Une usine fonctionne en couches empilées. <strong>En bas (couche 1), le plus concret</strong> : les machines, le métal, les moteurs. <strong>En haut (couche 6), le plus abstrait</strong> : les logiciels de gestion, les décisions stratégiques. L'information part d'en bas et remonte vers le haut.</p>
+<div class="layers">
+<div class="ly l1"><div class="ln">1</div><div class="lc"><h3>Couche Physique , Machines, Robots & Mécanique</h3><div class="lm">🧱 Ce qu'on touche, ce qui bouge, ce qui produit</div><div class="lr">Les machines fabriquent, les robots déplacent, les moteurs tournent.</div><div class="lp"><span class="chip">UNIVERSAL ROBOTS</span><span class="chip">AXIOME</span><span class="chip">AGILOX</span><span class="chip">VISIONNAV</span><span class="chip">FENWICK</span><span class="chip">DALMEC</span><span class="chip">NABERTHERM</span><span class="chip">MOOG</span><span class="chip">FPT</span><span class="chip">BINAR HANDLING</span></div></div></div>
+<div class="ly l2"><div class="ln">2</div><div class="lc"><h3>Couche Capteurs & Mesure</h3><div class="lm">👁️ Les yeux et oreilles des machines</div><div class="lr">Les capteurs transforment le monde physique en données : température, vibration, position, pression.</div><div class="lp"><span class="chip">IFM ELECTRONIC</span><span class="chip">TURCK BANNER</span><span class="chip">LEUZE</span><span class="chip">MICROSONIC</span><span class="chip">POSITAL</span><span class="chip">KUEBLER</span><span class="chip">I-CARE</span><span class="chip">UESYSTEMS</span><span class="chip">PROGES PLUS</span><span class="chip">INEO-SENSE</span></div></div></div>
+<div class="ly l3"><div class="ln">3</div><div class="lc"><h3>Couche Automatisme & Contrôle</h3><div class="lm">🧬 Le système nerveux , les automates pilotent les machines</div><div class="lr">Les automates (PLC) reçoivent les infos capteurs et envoient des ordres aux machines en quelques millisecondes.</div><div class="lp"><span class="chip">SIEMENS</span><span class="chip">SCHNEIDER</span><span class="chip">BECKHOFF</span><span class="chip">B&R (ABB)</span><span class="chip">PHOENIX CONTACT</span><span class="chip">PILZ</span><span class="chip">WAGO</span><span class="chip">EUCHNER</span><span class="chip">BIHL+WIEDEMANN</span><span class="chip">Inovance</span></div></div></div>
+<div class="ly l4"><div class="ln">4</div><div class="lc"><h3>Couche Réseau & Communication</h3><div class="lm">📡 Les tuyaux qui transportent les données</div><div class="lr">Protocoles et passerelles qui font communiquer les machines entre elles et avec les logiciels.</div><div class="lp"><span class="chip">HMS NETWORKS</span><span class="chip">OPC FOUNDATION</span><span class="chip">Nokia 5G</span><span class="chip">HUB ONE</span><span class="chip">SOFTING</span><span class="chip">IXON CLOUD</span><span class="chip">AXONE-IO</span><span class="chip">KEP IoT</span><span class="chip">DEUTSCHMANN</span><span class="chip">TEAMVIEWER</span></div></div></div>
+<div class="ly l5"><div class="ln">5</div><div class="lc"><h3>Couche Logicielle , Supervision, MES, GMAO</h3><div class="lm">🖥️ Les écrans qui montrent, suivent et alertent</div><div class="lr">SCADA = état usine en temps réel. MES = suivi production pièce par pièce. GMAO = planification maintenance.</div><div class="lp"><span class="chip">PcVue</span><span class="chip">CODRA</span><span class="chip">COPA-DATA</span><span class="chip">ICONICS</span><span class="chip">AEGIS</span><span class="chip">ASTREE SOFTWARE</span><span class="chip">CARL SOFTWARE</span><span class="chip">DIMOMAINT</span><span class="chip">FIELDBOX</span><span class="chip">JEMBA</span><span class="chip">TEEPTRAK</span><span class="chip">SCORTEX</span><span class="chip">ELLISTAT</span></div></div></div>
+<div class="ly l6"><div class="ln">6</div><div class="lc"><h3>Couche Décision , ERP, IA & Stratégie</h3><div class="lm">🧠 Le cerveau qui planifie, décide et optimise</div><div class="lr">L'ERP centralise la gestion. L'IA et les outils analytiques optimisent les décisions stratégiques.</div><div class="lp"><span class="chip">SAGE X3</span><span class="chip">ODOO</span><span class="chip">DIVALTO</span><span class="chip">ABAS</span><span class="chip">COSMO CONSULT</span><span class="chip">OPEN-PROD</span><span class="chip">DASSAULT SYSTEMES</span><span class="chip">PROBAYES</span><span class="chip">EURODECISION</span><span class="chip">SAS</span><span class="chip">SKU SCIENCE</span><span class="chip">INTUIFLOW</span><span class="chip">StratIA</span></div></div></div>
+</div>
+<div class="ll"><span>⬆ Couche 1 = le plus concret (ce qu'on touche)</span><span>Couche 6 = le plus abstrait (ce qui décide) ⬆</span></div>
+<div class="nb"><strong>💡 Analogie :</strong> Comme le corps humain. Couche 1 = muscles. Couche 2 = nerfs sensitifs. Couche 3 = moelle épinière (réflexes). Couche 4 = système nerveux (transport). Couche 5 = tronc cérébral (surveillance). Couche 6 = cortex (décision consciente).</div>
+</div>
+
+<!-- 2 CHAÎNE -->
+<div class="sc" id="s1">
+<div class="st">② La chaîne de valeur industrielle</div>
+<p class="sd">De l'idée à la livraison, chaque étape fait appel à des acteurs différents. Trois fonctions <strong>transversales</strong> accompagnent en permanence.</p>
+<div class="ch">
+<div class="cs" style="border-top:3px solid var(--a1)"><div class="ci">💡</div><div class="cl" style="color:var(--a1)">Concevoir</div><div class="ca">Dassault · Mathworks<br>Aletiq · Tebis<br>Zuken · Visual Comp.</div></div><div class="cha">→</div>
+<div class="cs" style="border-top:3px solid var(--a5)"><div class="ci">🏗️</div><div class="cl" style="color:var(--a5)">Construire</div><div class="ca">GSE · Bouygues<br>Cougnaud · Legoupil<br>Best-Hall</div></div><div class="cha">→</div>
+<div class="cs" style="border-top:3px solid var(--a6)"><div class="ci">🔌</div><div class="cl" style="color:var(--a6)">Installer</div><div class="ca">Actemium · Eiffage<br>Equans · Comp'Aut</div></div><div class="cha">→</div>
+<div class="cs" style="border-top:3px solid var(--a3)"><div class="ci">⚙️</div><div class="cl" style="color:var(--a3)">Produire</div><div class="ca">Siemens · Schneider<br>Universal Robots<br>Aegis · Picomto</div></div><div class="cha">→</div>
+<div class="cs" style="border-top:3px solid var(--a4)"><div class="ci">✅</div><div class="cl" style="color:var(--a4)">Contrôler</div><div class="ca">Scortex · Ellistat<br>Bureau Veritas<br>Cetim · ISQ</div></div><div class="cha">→</div>
+<div class="cs" style="border-top:3px solid var(--a2)"><div class="ci">📦</div><div class="cl" style="color:var(--a2)">Expédier</div><div class="ca">Geodis · Fenwick<br>Barcodis · Modula<br>MyrfidSolution</div></div><div class="cha">→</div>
+<div class="cs" style="border-top:3px solid var(--a7)"><div class="ci">🔧</div><div class="cl" style="color:var(--a7)">Maintenir</div><div class="ca">Carl Software<br>I-Care · Uesystems<br>Fieldbox · Ixon</div></div>
+</div>
+<p style="text-align:center;margin:1rem 0;color:var(--t3);font-size:.8rem">↻ <strong style="color:var(--a3)">Cycle continu</strong> : la maintenance reboucle sur la production</p>
+<p style="font-weight:600;font-size:.88rem;margin:1.5rem 0 .7rem;color:var(--a8)">⬇ Fonctions transversales , présentes à TOUTES les étapes</p>
+<div class="csg">
+<div class="csc" style="border-top-color:var(--a8)"><div class="csl" style="color:var(--a8)">⚡ Énergie</div><div class="csd">Alimente tout, surveille, optimise</div><div class="lp"><span class="chip">EDF</span><span class="chip">Schneider</span><span class="chip">Hellio</span><span class="chip">Albioma</span><span class="chip">Exakom</span></div></div>
+<div class="csc" style="border-top-color:var(--a7)"><div class="csl" style="color:var(--a7)">🛡️ Sécurité & Cyber</div><div class="csd">Protège machines, données et personnes</div><div class="lp"><span class="chip">Pilz</span><span class="chip">Euchner</span><span class="chip">Hack the OT</span><span class="chip">Trustngo</span><span class="chip">Prevor</span></div></div>
+<div class="csc" style="border-top-color:var(--a9)"><div class="csl" style="color:var(--a9)">📊 Data & IA</div><div class="csd">Collecte, analyse, prédit</div><div class="lp"><span class="chip">Fieldbox</span><span class="chip">Probayes</span><span class="chip">SAS</span><span class="chip">StratIA</span><span class="chip">Eurodecision</span></div></div>
+<div class="csc" style="border-top-color:var(--a10)"><div class="csl" style="color:var(--a10)">🎓 Formation & R&D</div><div class="csd">Forme les équipes, invente demain</div><div class="lp"><span class="chip">Arts et Métiers</span><span class="chip">CESI</span><span class="chip">INRIA</span><span class="chip">CEA-List</span><span class="chip">Proxinnov</span></div></div>
+</div></div>
+
+<!-- 3 FLUX -->
+<div class="sc" id="s2">
+<div class="st">③ Le parcours d'une donnée dans l'usine</div>
+<p class="sd">Quand un capteur détecte une vibration anormale, que se passe-t-il ? Voici le voyage complet, <strong>du capteur jusqu'à la décision</strong>.</p>
+<div class="fl">
+<div class="fs"><div class="fll">Monde physique<br>vibrations, chaleur<br>pression, lumière</div><div class="fln" style="background:var(--a2)"></div><div class="fr" style="border-left:3px solid var(--a2)"><div class="frt" style="color:var(--a2)">⚙️ Machine en fonctionnement</div><div class="frd">Un moteur tourne, un four chauffe, un robot soude</div><div class="lp"><span class="chip">Universal Robots</span><span class="chip">Nabertherm</span><span class="chip">Axiome</span></div></div></div>
+<div class="fc" style="background:var(--a4)"></div>
+<div class="fs"><div class="fll">Signaux électriques<br>0-10V, 4-20mA<br>IO-Link</div><div class="fln" style="background:var(--a4)"></div><div class="fr" style="border-left:3px solid var(--a4)"><div class="frt" style="color:var(--a4)">📡 Capteurs , Mesurer</div><div class="frd">Convertissent le physique en numérique : "87°C", "4.2 mm/s"</div><div class="lp"><span class="chip">IFM</span><span class="chip">Turck Banner</span><span class="chip">Leuze</span><span class="chip">I-Care</span><span class="chip">Uesystems</span></div></div></div>
+<div class="fc" style="background:var(--a6)"></div>
+<div class="fs"><div class="fll">Profinet, Modbus<br>OPC UA, MQTT<br>WiFi, 5G</div><div class="fln" style="background:var(--a6)"></div><div class="fr" style="border-left:3px solid var(--a6)"><div class="frt" style="color:var(--a6)">🔌 Transport , Connecter</div><div class="frd">Données transportées via réseaux industriels vers serveurs ou cloud</div><div class="lp"><span class="chip">HMS Networks</span><span class="chip">Nokia 5G</span><span class="chip">OPC Foundation</span><span class="chip">Ixon Cloud</span><span class="chip">Softing</span></div></div></div>
+<div class="fc" style="background:var(--a5)"></div>
+<div class="fs"><div class="fll">Serveurs edge<br>Cloud · BDD</div><div class="fln" style="background:var(--a5)"></div><div class="fr" style="border-left:3px solid var(--a5)"><div class="frt" style="color:var(--a5)">🖥️ Traiter , Superviser & Analyser</div><div class="frd">Affichage temps réel (SCADA), analyse IA, stockage historique</div><div class="lp"><span class="chip">PcVue</span><span class="chip">Codra</span><span class="chip">Fieldbox</span><span class="chip">Scortex</span><span class="chip">Ellistat</span><span class="chip">Probayes</span></div></div></div>
+<div class="fc" style="background:var(--a3)"></div>
+</div>
+<p style="font-weight:600;font-size:.83rem;margin:.5rem 0 .5rem;color:var(--a3)">⬇ Les données alimentent 5 fonctions</p>
+<div class="ffn">
+<div class="ffc" style="border-top-color:var(--a2)"><div class="ffi">🔧</div><div class="ffl">Maintenance</div><div class="ffa">Carl Software<br>I-Care</div></div>
+<div class="ffc" style="border-top-color:var(--a3)"><div class="ffi">✅</div><div class="ffl">Qualité</div><div class="ffa">Aegis · Astrée<br>Scortex</div></div>
+<div class="ffc" style="border-top-color:var(--a4)"><div class="ffi">📦</div><div class="ffl">Logistique</div><div class="ffa">Geodis<br>Intuiflow</div></div>
+<div class="ffc" style="border-top-color:var(--a8)"><div class="ffi">⚡</div><div class="ffl">Énergie</div><div class="ffa">Exakom<br>Schneider</div></div>
+<div class="ffc" style="border-top-color:var(--a1)"><div class="ffi">💰</div><div class="ffl">ERP</div><div class="ffa">Sage X3 · Odoo<br>Divalto · Abas</div></div>
+</div></div>
+
+<!-- 4 HUB -->
+<div class="sc" id="s3">
+<div class="st">④ L'usine au centre de son écosystème</div>
+<p class="sd"><strong>8 familles de partenaires</strong> entourent l'usine. Chacune apporte une expertise différente.</p>
+<div class="hg">
+<div class="hc" style="border-top:3px solid var(--a2)"><div class="hi">⚙️</div><div class="hl" style="color:var(--a2)">Automaticiens</div><div class="ha">Siemens · Schneider<br>Beckhoff · B&R · Wago</div></div>
+<div class="hc" style="border-top:3px solid var(--a4)"><div class="hi">🤖</div><div class="hl" style="color:var(--a4)">Roboticiens</div><div class="ha">Universal Robots<br>Agilox · Visionnav<br>Easymov · Axiome</div></div>
+<div class="hc" style="border-top:3px solid var(--a6)"><div class="hi">📡</div><div class="hl" style="color:var(--a6)">IoT & Capteurs</div><div class="ha">IFM · Turck Banner<br>Fieldbox · Jemba<br>I-Care · Ineo-Sense</div></div>
+<div class="hc" style="border-top:3px solid var(--a5)"><div class="hi">🔌</div><div class="hl" style="color:var(--a5)">Intégrateurs</div><div class="ha">Actemium · Eiffage<br>Equans · Alten<br>Capgemini</div></div>
+<div class="hcc"><span>🏭</span>L'USINE</div>
+<div class="hc" style="border-top:3px solid var(--a3)"><div class="hi">💻</div><div class="hl" style="color:var(--a3)">Éditeurs logiciels</div><div class="ha">Sage X3 · Odoo<br>Aegis · PcVue<br>Carl Software</div></div>
+<div class="hc" style="border-top:3px solid var(--a8)"><div class="hi">⚡</div><div class="hl" style="color:var(--a8)">Énergéticiens</div><div class="ha">EDF · Schneider<br>Hellio · Albioma<br>Exakom · Reevolt</div></div>
+<div class="hc" style="border-top:3px solid var(--a7)"><div class="hi">🛡️</div><div class="hl" style="color:var(--a7)">Sécurité & Cyber</div><div class="ha">Pilz · Euchner<br>Hack the OT<br>Schmersal · Prevor</div></div>
+<div class="hc" style="border-top:3px solid var(--a9)"><div class="hi">🔬</div><div class="hl" style="color:var(--a9)">Recherche & Formation</div><div class="ha">INRIA · CEA-List<br>Arts et Métiers<br>CESI · Proxinnov</div></div>
+</div></div>
+
+<!-- 5 CONCURRENCES -->
+<div class="sc" id="s4">
+<div class="st">⑤ Les arènes concurrentielles</div>
+<p class="sd">Dans chaque catégorie, <strong>plusieurs entreprises se battent pour le même client</strong>.</p>
+<div class="ar">
+<div class="ac"><div class="act" style="color:var(--a1)">🧾 ERP</div><div class="aps"><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">ODOO</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">DIVALTO</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">ABAS</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">OPEN-PROD</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">COSMO CONSULT</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a5)">⚙️ Automates</div><div class="aps"><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">SIEMENS</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">SCHNEIDER</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">BECKHOFF</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">B&R</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">Inovance</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a6)">🖥️ SCADA</div><div class="aps"><span class="ap" style="border-color:var(--a6);color:var(--a6);background:rgba(139,233,253,.08)">PcVue</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a6);color:var(--a6);background:rgba(139,233,253,.08)">CODRA</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a6);color:var(--a6);background:rgba(139,233,253,.08)">COPA-DATA</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a6);color:var(--a6);background:rgba(139,233,253,.08)">ICONICS</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a3)">🔧 GMAO</div><div class="aps"><span class="ap" style="border-color:var(--a3);color:var(--a3);background:rgba(80,216,144,.08)">CARL SOFTWARE</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a3);color:var(--a3);background:rgba(80,216,144,.08)">DIMOMAINT</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a3);color:var(--a3);background:rgba(80,216,144,.08)">ECOS SYSTEMS</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a3);color:var(--a3);background:rgba(80,216,144,.08)">Corim</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a4)">🔌 Connectique</div><div class="aps"><span class="ap" style="border-color:var(--a4);color:var(--a4);background:rgba(255,184,108,.08)">PHOENIX CONTACT</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a4);color:var(--a4);background:rgba(255,184,108,.08)">WAGO</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a4);color:var(--a4);background:rgba(255,184,108,.08)">WEIDMÜLLER</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a4);color:var(--a4);background:rgba(255,184,108,.08)">Murrelektronik</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a2)">📡 Capteurs</div><div class="aps"><span class="ap" style="border-color:var(--a2);color:var(--a2);background:rgba(255,107,138,.08)">IFM</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a2);color:var(--a2);background:rgba(255,107,138,.08)">TURCK BANNER</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a2);color:var(--a2);background:rgba(255,107,138,.08)">LEUZE</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a2);color:var(--a2);background:rgba(255,107,138,.08)">MICROSONIC</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a7)">🤖 Qualité IA</div><div class="aps"><span class="ap" style="border-color:var(--a7);color:var(--a7);background:rgba(255,121,198,.08)">SCORTEX</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a7);color:var(--a7);background:rgba(255,121,198,.08)">FABERA</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a7);color:var(--a7);background:rgba(255,121,198,.08)">ELISA INDUSTRIQ</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a9)">📱 Instructions digitales</div><div class="aps"><span class="ap" style="border-color:var(--a9);color:var(--a9);background:rgba(102,217,239,.08)">PICOMTO</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a9);color:var(--a9);background:rgba(102,217,239,.08)">AZUMUTA</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a9);color:var(--a9);background:rgba(102,217,239,.08)">DIGIFACTO</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a10)">🔒 Sécurité machines</div><div class="aps"><span class="ap" style="border-color:var(--a10);color:var(--a10);background:rgba(166,226,46,.08)">PILZ</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a10);color:var(--a10);background:rgba(166,226,46,.08)">EUCHNER</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a10);color:var(--a10);background:rgba(166,226,46,.08)">SCHMERSAL</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a8)">🏗️ Intégrateurs</div><div class="aps"><span class="ap" style="border-color:var(--a8);color:var(--a8);background:rgba(241,250,140,.08)">ACTEMIUM</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a8);color:var(--a8);background:rgba(241,250,140,.08)">EIFFAGE ÉNERGIE</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a8);color:var(--a8);background:rgba(241,250,140,.08)">EQUANS</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a1)">📊 Performance machines</div><div class="aps"><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">JEMBA</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">TEEPTRAK</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">DATIVE</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a1);color:var(--a1);background:rgba(108,138,255,.08)">OPTIMISTIK</span></div></div>
+<div class="ac"><div class="act" style="color:var(--a5)">🚗 Robots logistiques</div><div class="aps"><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">AGILOX</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">EASYMOV</span><span class="vs">vs</span><span class="ap" style="border-color:var(--a5);color:var(--a5);background:rgba(189,147,249,.08)">VISIONNAV</span></div></div>
+</div></div>
+
+<!-- 6 PAIN -->
+<div class="sc" id="s5">
+<div class="st">⑥ Les 10 douleurs des usines</div>
+<p class="sd">Chaque entreprise existe parce qu'elle résout un problème concret.</p>
+<div class="pg">
+<div class="pc" style="border-color:var(--a2)"><div class="pr">1</div><div class="pt" style="color:var(--a2)">🔴 Pannes imprévues</div><div class="ps">Machine arrêtée → ligne bloquée → retards</div><div class="pw"><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">I-Care</span><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Carl Software</span><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Fieldbox</span><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Uesystems</span></div></div>
+<div class="pc" style="border-color:var(--a4)"><div class="pr">2</div><div class="pt" style="color:var(--a4)">🟡 Zéro visibilité temps réel</div><div class="ps">Le directeur ne sait pas ce qui se passe</div><div class="pw"><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">PcVue</span><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">Jemba</span><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">Teeptrak</span><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">Dative</span></div></div>
+<div class="pc" style="border-color:var(--a3)"><div class="pr">3</div><div class="pt" style="color:var(--a3)">🟢 Défauts non détectés</div><div class="ps">Pièces mauvaises → retours clients</div><div class="pw"><span class="pp" style="background:rgba(80,216,144,.12);color:var(--a3)">Scortex</span><span class="pp" style="background:rgba(80,216,144,.12);color:var(--a3)">Ellistat</span><span class="pp" style="background:rgba(80,216,144,.12);color:var(--a3)">Aegis</span><span class="pp" style="background:rgba(80,216,144,.12);color:var(--a3)">Bureau Veritas</span></div></div>
+<div class="pc" style="border-color:var(--a1)"><div class="pr">4</div><div class="pt" style="color:var(--a1)">🔵 Tout sur papier/Excel</div><div class="ps">Saisies multiples, erreurs, infos perdues</div><div class="pw"><span class="pp" style="background:rgba(108,138,255,.12);color:var(--a1)">Sage X3</span><span class="pp" style="background:rgba(108,138,255,.12);color:var(--a1)">Odoo</span><span class="pp" style="background:rgba(108,138,255,.12);color:var(--a1)">Picomto</span><span class="pp" style="background:rgba(108,138,255,.12);color:var(--a1)">Azumuta</span><span class="pp" style="background:rgba(108,138,255,.12);color:var(--a1)">Shizen</span></div></div>
+<div class="pc" style="border-color:var(--a5)"><div class="pr">5</div><div class="pt" style="color:var(--a5)">🟣 Stocks en excès ou rupture</div><div class="ps">Cash immobilisé OU production bloquée</div><div class="pw"><span class="pp" style="background:rgba(189,147,249,.12);color:var(--a5)">Sage X3</span><span class="pp" style="background:rgba(189,147,249,.12);color:var(--a5)">Intuiflow</span><span class="pp" style="background:rgba(189,147,249,.12);color:var(--a5)">SKU Science</span><span class="pp" style="background:rgba(189,147,249,.12);color:var(--a5)">Odoo</span><span class="pp" style="background:rgba(189,147,249,.12);color:var(--a5)">Geodis</span></div></div>
+<div class="pc" style="border-color:var(--a8)"><div class="pr">6</div><div class="pt" style="color:var(--a8)">⚡ Facture énergie explose</div><div class="ps">Gaspillage invisible → marge qui fond</div><div class="pw"><span class="pp" style="background:rgba(241,250,140,.12);color:var(--a8)">Exakom</span><span class="pp" style="background:rgba(241,250,140,.12);color:var(--a8)">Schneider</span><span class="pp" style="background:rgba(241,250,140,.12);color:var(--a8)">Hellio</span><span class="pp" style="background:rgba(241,250,140,.12);color:var(--a8)">Reevolt</span></div></div>
+<div class="pc" style="border-color:var(--a6)"><div class="pr">7</div><div class="pt" style="color:var(--a6)">🔗 Systèmes en silos</div><div class="ps">ERP, MES, SCADA ne se parlent pas</div><div class="pw"><span class="pp" style="background:rgba(139,233,253,.12);color:var(--a6)">HMS Networks</span><span class="pp" style="background:rgba(139,233,253,.12);color:var(--a6)">OPC Foundation</span><span class="pp" style="background:rgba(139,233,253,.12);color:var(--a6)">Actemium</span><span class="pp" style="background:rgba(139,233,253,.12);color:var(--a6)">Softing</span></div></div>
+<div class="pc" style="border-color:var(--a7)"><div class="pr">8</div><div class="pt" style="color:var(--a7)">🛡️ Cyberattaques</div><div class="ps">Un pirate peut arrêter l'usine à distance</div><div class="pw"><span class="pp" style="background:rgba(255,121,198,.12);color:var(--a7)">Hack the OT</span><span class="pp" style="background:rgba(255,121,198,.12);color:var(--a7)">Cybertys</span><span class="pp" style="background:rgba(255,121,198,.12);color:var(--a7)">Trustngo</span><span class="pp" style="background:rgba(255,121,198,.12);color:var(--a7)">Nokia</span></div></div>
+<div class="pc" style="border-color:var(--a4)"><div class="pr">9</div><div class="pt" style="color:var(--a4)">📋 Traçabilité impossible</div><div class="ps">Rappel produit ? Impossible de retrouver la source</div><div class="pw"><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">Barcodis</span><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">MyrfidSolution</span><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">Aegis</span><span class="pp" style="background:rgba(255,184,108,.12);color:var(--a4)">TRAKmy</span></div></div>
+<div class="pc" style="border-color:var(--a2)"><div class="pr">10</div><div class="pt" style="color:var(--a2)">👷 Pénurie de bras</div><div class="ps">Pas assez de techniciens, savoir-faire qui part</div><div class="pw"><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Actual</span><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Arts et Métiers</span><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Universal Robots</span><span class="pp" style="background:rgba(255,107,138,.12);color:var(--a2)">Invirtus</span></div></div>
+</div></div>
+
+<!-- 7 TIMELINE -->
+<div class="sc" id="s6">
+<div class="st">⑦ Un projet d'usine , 6 phases</div>
+<p class="sd">Quand une entreprise décide de construire ou moderniser une usine, voici l'ordre d'intervention. Durée : <strong>12-18 mois</strong>.</p>
+<div class="tl">
+<div class="ti"><div class="td" style="background:var(--a1)"></div><div class="tp" style="color:var(--a1)">Mois 1-3</div><div class="tt">💡 Étude & Conception</div><div class="tx">Dessiner le produit en 3D, simuler les process, concevoir le bâtiment.</div><div class="ta"><span class="tc">Dassault Systèmes</span><span class="tc">Mathworks</span><span class="tc">Visual Components</span><span class="tc">Arkance</span><span class="tc">Capgemini</span></div></div>
+<div class="ti"><div class="td" style="background:var(--a5)"></div><div class="tp" style="color:var(--a5)">Mois 3-9</div><div class="tt">🏗️ Construction & Installation</div><div class="tx">Bâtiment, machines, électricité, réseaux.</div><div class="ta"><span class="tc">GSE / Bouygues</span><span class="tc">Actemium</span><span class="tc">Eiffage</span><span class="tc">Cougnaud</span><span class="tc">Helukabel</span><span class="tc">Nokia</span></div></div>
+<div class="ti"><div class="td" style="background:var(--a6)"></div><div class="tp" style="color:var(--a6)">Mois 6-10</div><div class="tt">⚙️ Automatisation & Mise en service</div><div class="tx">Automates programmés, robots calibrés, capteurs connectés, sécurités validées.</div><div class="ta"><span class="tc">Siemens / Schneider</span><span class="tc">Universal Robots</span><span class="tc">IFM / Turck</span><span class="tc">Phoenix Contact</span><span class="tc">Pilz</span><span class="tc">Beckhoff</span></div></div>
+<div class="ti"><div class="td" style="background:var(--a3)"></div><div class="tp" style="color:var(--a3)">Mois 8-12</div><div class="tt">💻 Déploiement logiciel</div><div class="tx">ERP paramétré, MES connecté, supervision en place, GMAO opérationnelle.</div><div class="ta"><span class="tc">Sage X3 / Odoo / Divalto</span><span class="tc">Aegis / Astrée</span><span class="tc">PcVue / Codra</span><span class="tc">Carl Software</span><span class="tc">Picomto</span></div></div>
+<div class="ti"><div class="td" style="background:var(--a4)"></div><div class="tp" style="color:var(--a4)">Mois 10-14</div><div class="tt">📡 IoT, IA & Optimisation</div><div class="tx">Données qui remontent, IA qui prédit, premiers gains de productivité.</div><div class="ta"><span class="tc">Fieldbox</span><span class="tc">Scortex</span><span class="tc">Ellistat</span><span class="tc">Jemba</span><span class="tc">Exakom</span><span class="tc">Hack the OT</span></div></div>
+<div class="ti"><div class="td" style="background:var(--a2)"></div><div class="tp" style="color:var(--a2)">En continu</div><div class="tt">🔄 Exploitation & Amélioration continue</div><div class="tx">Mesurer, améliorer, former, maintenir. Cycle sans fin.</div><div class="ta"><span class="tc">Groupe Lean France</span><span class="tc">Shizen</span><span class="tc">I-Care</span><span class="tc">Mewa</span><span class="tc">Bureau Veritas</span><span class="tc">Sesa Systems</span></div></div>
+</div></div>
+
+<!-- 8 SCÉNARIO -->
+<div class="sc" id="s7">
+<div class="st">⑧ Scénario : "Une pièce défectueuse est détectée"</div>
+<p class="sd">Usine d'injection plastique. À 14h32, la caméra IA détecte un défaut de surface. Voici ce qui se passe, <strong>étape par étape</strong>.</p>
+<div class="sn">
+<div class="sh"><div class="sht">🏭 Contexte : Usine plastique , 3 lignes, 45 employés, 2000 pièces/heure</div><div class="shd">Un système de vision IA inspecte chaque pièce en sortie de moule.</div></div>
+<div class="ss"><div class="ssn" style="background:var(--a2)">1</div><div class="ssc"><div class="ssw">La caméra IA détecte un défaut</div><div class="ssy">Scortex identifie une rayure récurrente depuis 3 minutes → alerte automatique</div><div class="ta"><span class="tc">Scortex (vision IA)</span><span class="tc">Effilux (éclairage)</span></div></div></div>
+<div class="ss"><div class="ssn" style="background:var(--a4)">2</div><div class="ssc"><div class="ssw">Alerte dans le MES</div><div class="ssy">Le lot est bloqué, le chef d'équipe est prévenu sur son écran</div><div class="ta"><span class="tc">Aegis ou Astrée (MES)</span><span class="tc">Telelogos (affichage)</span></div></div></div>
+<div class="ss"><div class="ssn" style="background:var(--a6)">3</div><div class="ssc"><div class="ssw">Analyse de la cause racine</div><div class="ssy">Les capteurs IFM montrent une dérive vibratoire → roulement qui s'use. Ellistat confirme la dérive statistique.</div><div class="ta"><span class="tc">IFM (capteurs)</span><span class="tc">Ellistat (SPC)</span><span class="tc">Fieldbox (historique)</span></div></div></div>
+<div class="ss"><div class="ssn" style="background:var(--a3)">4</div><div class="ssc"><div class="ssw">Ordre de maintenance généré</div><div class="ssy">La GMAO crée un OT, vérifie le stock de pièces, assigne un technicien</div><div class="ta"><span class="tc">Carl Software (GMAO)</span><span class="tc">EcoSpare (pièces)</span></div></div></div>
+<div class="ss"><div class="ssn" style="background:var(--a5)">5</div><div class="ssc"><div class="ssw">Intervention guidée</div><div class="ssy">Procédure sur tablette durcie avec photos/vidéo. Expert à distance si besoin.</div><div class="ta"><span class="tc">Picomto (instructions)</span><span class="tc">Getac (tablette)</span><span class="tc">Kolus (visio expert)</span></div></div></div>
+<div class="ss"><div class="ssn" style="background:var(--a1)">6</div><div class="ssc"><div class="ssw">Impact gestion globale</div><div class="ssy">L'ERP ajuste le planning. Le lot défectueux est tracé de bout en bout.</div><div class="ta"><span class="tc">Sage X3 / Odoo / Divalto (ERP)</span><span class="tc">Barcodis (traçabilité)</span><span class="tc">Shizen (rituel perf.)</span></div></div></div>
+</div>
+<div class="nb"><strong>💡 Bilan :</strong> 10+ entreprises ont collaboré en quelques minutes. Il y a 10 ans, tout ça se faisait à la main, en heures.</div>
+</div>
+
+<!-- 9 RÔLES -->
+<div class="sc" id="s8">
+<div class="st">⑨ Les 8 rôles d'acteurs</div>
+<p class="sd">Comment <strong>distinguer les types d'entreprises</strong>. Une même entreprise peut jouer plusieurs rôles.</p>
+<div class="rg">
+<div class="rc" style="border-top-color:var(--a2)"><div class="rct" style="color:var(--a2)">🔨 Fabricant</div><div class="rcd">Crée un produit physique</div><div class="lp"><span class="chip">Universal Robots</span><span class="chip">IFM</span><span class="chip">Phoenix Contact</span><span class="chip">Fenwick</span></div></div>
+<div class="rc" style="border-top-color:var(--a1)"><div class="rct" style="color:var(--a1)">💻 Éditeur logiciel</div><div class="rcd">Crée un logiciel</div><div class="lp"><span class="chip">Sage X3</span><span class="chip">Odoo</span><span class="chip">PcVue</span><span class="chip">Carl Software</span><span class="chip">Aegis</span></div></div>
+<div class="rc" style="border-top-color:var(--a3)"><div class="rct" style="color:var(--a3)">🔌 Intégrateur</div><div class="rcd">Assemble les produits des autres</div><div class="lp"><span class="chip">Actemium</span><span class="chip">Eiffage</span><span class="chip">Equans</span><span class="chip">4CAD</span></div></div>
+<div class="rc" style="border-top-color:var(--a4)"><div class="rct" style="color:var(--a4)">📦 Distributeur</div><div class="rcd">Revend les produits des fabricants</div><div class="lp"><span class="chip">Conrad</span><span class="chip">Factory Systèmes</span><span class="chip">Amazon Business</span></div></div>
+<div class="rc" style="border-top-color:var(--a5)"><div class="rct" style="color:var(--a5)">📋 Conseil</div><div class="rcd">Expertise et recommandations</div><div class="lp"><span class="chip">Capgemini</span><span class="chip">Alten</span><span class="chip">Theoris</span><span class="chip">Groupe Lean</span></div></div>
+<div class="rc" style="border-top-color:var(--a6)"><div class="rct" style="color:var(--a6)">✅ Certificateur</div><div class="rcd">Vérifie la conformité aux normes</div><div class="lp"><span class="chip">Bureau Veritas</span><span class="chip">Cetim</span><span class="chip">ISQ</span><span class="chip">TWI</span></div></div>
+<div class="rc" style="border-top-color:var(--a8)"><div class="rct" style="color:var(--a8)">⚡ Énergéticien</div><div class="rcd">Fournit ou optimise l'énergie</div><div class="lp"><span class="chip">EDF</span><span class="chip">Albioma</span><span class="chip">Hellio</span><span class="chip">Mint</span></div></div>
+<div class="rc" style="border-top-color:var(--a9)"><div class="rct" style="color:var(--a9)">🔬 Recherche</div><div class="rcd">Invente demain, forme les ingénieurs</div><div class="lp"><span class="chip">INRIA</span><span class="chip">CEA-List</span><span class="chip">Arts et Métiers</span><span class="chip">Proxinnov</span></div></div>
+</div>
+<div class="nb"><strong>💡 Astuce salon :</strong> Demandez-vous à chaque stand : "fabricant, éditeur, intégrateur, distributeur ou conseil ?" La réponse change tout.</div>
+</div>
+
+<!-- 10 GLOSSAIRE -->
+<div class="sc" id="s9">
+<div class="st">⑩ Glossaire visuel , 15 mots-clés essentiels</div>
+<p class="sd">L'industrie parle en acronymes. Voici les <strong>15 termes</strong> à connaître pour suivre les conversations au salon.</p>
+<div class="gl">
+<div class="gc"><div class="gci">📊</div><div><div class="gct">ERP</div><div class="gcd">Le "méga-logiciel" qui gère TOUT : achats, ventes, stocks, production, compta. Le remplaçant d'Excel.</div></div></div>
+<div class="gc"><div class="gci">🏭</div><div><div class="gct">MES</div><div class="gcd">Suit la production pièce par pièce en temps réel. Se situe entre l'ERP et les machines.</div></div></div>
+<div class="gc"><div class="gci">🖥️</div><div><div class="gct">SCADA</div><div class="gcd">Affiche l'état de l'usine sur de grands écrans : schémas animés, courbes, alarmes.</div></div></div>
+<div class="gc"><div class="gci">🔧</div><div><div class="gct">GMAO</div><div class="gcd">Planifie toute la maintenance : quand changer une courroie, qui a fait la dernière révision.</div></div></div>
+<div class="gc"><div class="gci">📡</div><div><div class="gct">IoT</div><div class="gcd">Internet des Objets. Des capteurs connectés qui envoient des données , comme un Fitbit pour les machines.</div></div></div>
+<div class="gc"><div class="gci">📐</div><div><div class="gct">PLM</div><div class="gcd">Gère un produit de sa conception (plans 3D) à sa fin de vie, en passant par toutes ses versions.</div></div></div>
+<div class="gc"><div class="gci">🤖</div><div><div class="gct">Cobot</div><div class="gcd">Robot collaboratif. Bras robot léger qui travaille à côté d'un humain, sans cage.</div></div></div>
+<div class="gc"><div class="gci">🚗</div><div><div class="gct">AGV / AMR</div><div class="gcd">Robots sur roues qui déplacent des palettes tout seuls , chariots sans conducteur.</div></div></div>
+<div class="gc"><div class="gci">📈</div><div><div class="gct">TRS / OEE</div><div class="gcd">LE KPI n°1 en usine. % de temps où la machine produit des pièces bonnes. 85% = top. 50% = problème.</div></div></div>
+<div class="gc"><div class="gci">🔗</div><div><div class="gct">OPC UA</div><div class="gcd">"Langage universel" pour que les machines se parlent , comme l'USB pour l'industrie.</div></div></div>
+<div class="gc"><div class="gci">🔄</div><div><div class="gct">Lean</div><div class="gcd">Méthode Toyota : éliminer tout ce qui n'ajoute pas de valeur (attentes, déplacements inutiles).</div></div></div>
+<div class="gc"><div class="gci">🌐</div><div><div class="gct">IT / OT</div><div class="gcd">IT = informatique bureau. OT = informatique machines. Leur fusion crée des risques cyber.</div></div></div>
+<div class="gc"><div class="gci">🔌</div><div><div class="gct">PLC / Automate</div><div class="gcd">Le "cerveau" d'une machine. Reçoit les capteurs, envoie les ordres aux moteurs , en millisecondes.</div></div></div>
+<div class="gc"><div class="gci">🪞</div><div><div class="gct">Jumeau numérique</div><div class="gcd">Copie virtuelle 3D d'une usine. On simule des changements dans le virtuel avant le réel.</div></div></div>
+<div class="gc"><div class="gci">🛡️</div><div><div class="gct">Marquage CE</div><div class="gcd">Attestation européenne qu'une machine est sûre. Sans CE = pas de vente.</div></div></div>
+</div></div>
+
+<!-- 11 COMBOS -->
+<div class="sc" id="s10">
+<div class="st">⑪ Les duos et trios gagnants</div>
+<p class="sd">Ces entreprises ne travaillent pas seules. Voici les <strong>combinaisons concrètes</strong> les plus fréquentes.</p>
+<div class="co">
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(255,107,138,.15);color:var(--a2)">IFM (capteur)</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(80,216,144,.15);color:var(--a3)">Fieldbox (IA)</span> <span class="tag" style="background:rgba(108,138,255,.15);color:var(--a1)">Carl Software</span><div class="cpx">Capteur détecte vibration → Fieldbox analyse → Carl crée l'ordre de maintenance → <strong>panne évitée</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(189,147,249,.15);color:var(--a5)">Siemens (automate)</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(139,233,253,.15);color:var(--a6)">Actemium</span> <span class="tag" style="background:rgba(255,184,108,.15);color:var(--a4)">Pilz (sécurité)</span><div class="cpx">Actemium programme Siemens + Pilz sécurise → <strong>ligne automatisée ET conforme CE</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(255,121,198,.15);color:var(--a7)">Scortex (vision IA)</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(166,226,46,.15);color:var(--a10)">Effilux</span> <span class="tag" style="background:rgba(80,216,144,.15);color:var(--a3)">Astrée (MES)</span><div class="cpx">Éclairage parfait → IA détecte défaut → MES trace le lot → <strong>0 pièce mauvaise chez le client</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(108,138,255,.15);color:var(--a1)">Universal Robots</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(102,217,239,.15);color:var(--a9)">Proxinnov</span> <span class="tag" style="background:rgba(241,250,140,.15);color:var(--a8)">Picomto</span><div class="cpx">Proxinnov aide à choisir le cobot → Picomto forme les opérateurs → <strong>PME robotisée en 3 mois</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(241,250,140,.15);color:var(--a8)">Schneider (énergie)</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(255,184,108,.15);color:var(--a4)">Exakom</span> <span class="tag" style="background:rgba(80,216,144,.15);color:var(--a3)">Hellio (CEE)</span><div class="cpx">Exakom mesure → Schneider optimise → Hellio finance les travaux → <strong>facture -25%</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(139,233,253,.15);color:var(--a6)">HMS Networks</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(189,147,249,.15);color:var(--a5)">OPC Foundation</span> <span class="tag" style="background:rgba(108,138,255,.15);color:var(--a1)">Sage X3 (ERP)</span><div class="cpx">HMS traduit les protocoles → OPC UA standardise → Sage X3 reçoit les données → <strong>machines des années 90 parlent à 2026</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(255,107,138,.15);color:var(--a2)">Jemba (TRS)</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(166,226,46,.15);color:var(--a10)">Shizen</span> <span class="tag" style="background:rgba(189,147,249,.15);color:var(--a5)">Lean France</span><div class="cpx">Jemba mesure le TRS → Shizen affiche dans les rituels → Lean anime l'amélioration → <strong>TRS 55% → 75%</strong></div></div></div>
+<div class="cp"><div class="cpl"><span class="tag" style="background:rgba(255,121,198,.15);color:var(--a7)">Hack the OT</span></div><div class="cpp">+</div><div class="cpr"><span class="tag" style="background:rgba(102,217,239,.15);color:var(--a9)">Nokia (5G)</span> <span class="tag" style="background:rgba(255,184,108,.15);color:var(--a4)">Softing</span><div class="cpx">Hack the OT audite → Nokia sécurise le réseau → Softing diagnostique → <strong>usine connectée ET protégée</strong></div></div></div>
+</div>
+<div class="nb"><strong>💡 Retenez :</strong> La valeur naît rarement d'un seul produit , elle naît de la <strong>combinaison</strong>. Un capteur seul ne sert à rien sans logiciel. Un ERP seul ne sert à rien sans machines connectées. C'est l'<strong>intégration</strong> qui crée la magie.</div>
+</div>
+
+
+<!-- 12 JOURNÉE -->
+<div class="sc" id="s11">
+<div class="st">⑫ Journée type d'une usine connectée</div>
+<p class="sd">Quand et comment ces outils servent au quotidien, usine de 100 personnes.</p>
+<div class="jy">
+<div class="jc" style="--jc:var(--a4)"><div class="jt">6h00</div><div class="jb"><div class="jh">Briefing performance</div><div class="jd">Chef d'équipe consulte Shizen : TRS veille, problèmes, actions. Données de Jemba.</div><div class="jtags"><span class="jtag">Shizen</span><span class="jtag">Jemba</span></div></div></div>
+<div class="jc" style="--jc:var(--a3)"><div class="jt">6h30</div><div class="jb"><div class="jh">Production démarre</div><div class="jd">Automates Siemens lancent les machines. Sage X3 a envoyé les ordres de fabrication. Opérateurs suivent Picomto.</div><div class="jtags"><span class="jtag">Sage X3</span><span class="jtag">Siemens</span><span class="jtag">Picomto</span></div></div></div>
+<div class="jc" style="--jc:var(--a2)"><div class="jt">8h15</div><div class="jb"><div class="jh">Alerte maintenance</div><div class="jd">Capteur IFM : vibration anormale. I-Care prédit une panne dans 10 jours. Carl Software programme l'intervention.</div><div class="jtags"><span class="jtag">IFM</span><span class="jtag">I-Care</span><span class="jtag">Carl Software</span></div></div></div>
+<div class="jc" style="--jc:var(--a7)"><div class="jt">10h00</div><div class="jb"><div class="jh">Contrôle qualité IA</div><div class="jd">Scortex inspecte 100% des pièces. 3 défauts éjectés. MES Aegis enregistre.</div><div class="jtags"><span class="jtag">Scortex</span><span class="jtag">Aegis</span></div></div></div>
+<div class="jc" style="--jc:var(--a1)"><div class="jt">11h30</div><div class="jb"><div class="jh">Dashboard direction</div><div class="jd">PcVue : état des lignes. Sage X3 : commandes et stocks. Exakom : consommation énergie du matin.</div><div class="jtags"><span class="jtag">PcVue</span><span class="jtag">Sage X3</span><span class="jtag">Exakom</span></div></div></div>
+<div class="jc" style="--jc:var(--a5)"><div class="jt">14h00</div><div class="jb"><div class="jh">Réception matières</div><div class="jd">Camion Geodis arrive. Palettes scannées Barcodis. Stock mis à jour dans Sage X3. AGV Agilox livre en bord de ligne.</div><div class="jtags"><span class="jtag">Geodis</span><span class="jtag">Barcodis</span><span class="jtag">Sage X3</span><span class="jtag">Agilox</span></div></div></div>
+<div class="jc" style="--jc:var(--a6)"><div class="jt">16h00</div><div class="jb"><div class="jh">Expédition</div><div class="jd">Palettes RFID, chargées par Fenwick, tracées jusqu'au client.</div><div class="jtags"><span class="jtag">MyrfidSolution</span><span class="jtag">Fenwick</span><span class="jtag">Sage X3</span></div></div></div>
+<div class="jc" style="--jc:var(--a8)"><div class="jt">17h30</div><div class="jb"><div class="jh">Bilan jour</div><div class="jd">TRS 78%. Énergie -12% vs mois dernier. 0 accident. Rituel demain prêt sur Shizen.</div><div class="jtags"><span class="jtag">Shizen</span><span class="jtag">Schneider</span><span class="jtag">Pilz</span></div></div></div>
+</div>
+</div>
+
+<!-- 13 BUDGET -->
+<div class="sc" id="s12">
+<div class="st">⑬ Budget techno d'une usine</div>
+<p class="sd">1 M€ de transformation digitale, répartition typique.</p>
+<div class="bu">
+<div class="bb">
+<div class="bs" style="width:25%;background:#6c8aff">ERP 25%</div>
+<div class="bs" style="width:20%;background:#bd93f9">Auto 20%</div>
+<div class="bs" style="width:15%;background:#50d890">MES 15%</div>
+<div class="bs" style="width:12%;background:#ffb86c">IoT 12%</div>
+<div class="bs" style="width:10%;background:#ff6b8a">Intég 10%</div>
+<div class="bs" style="width:8%;background:#8be9fd;color:#0c0e14">Cyber 8%</div>
+<div class="bs" style="width:10%;background:#ff79c6">Form 10%</div>
+</div>
+<div class="bg">
+<div class="bc"><div class="bcp" style="color:var(--a1)">25%</div><div class="bct">ERP, socle gestion</div><div class="bcd">Sage X3, Odoo, Divalto…</div></div>
+<div class="bc"><div class="bcp" style="color:var(--a5)">20%</div><div class="bct">Automatisme</div><div class="bcd">Siemens, robots, capteurs</div></div>
+<div class="bc"><div class="bcp" style="color:var(--a3)">15%</div><div class="bct">MES/SCADA</div><div class="bcd">Aegis, PcVue, Carl…</div></div>
+<div class="bc"><div class="bcp" style="color:var(--a4)">12%</div><div class="bct">IoT/Data/IA</div><div class="bcd">Fieldbox, Scortex, Ellistat</div></div>
+<div class="bc"><div class="bcp" style="color:var(--a2)">10%</div><div class="bct">Intégration</div><div class="bcd">Actemium, Capgemini</div></div>
+<div class="bc"><div class="bcp" style="color:var(--a6)">8%</div><div class="bct">Cybersécurité</div><div class="bcd">Hack the OT, Nokia</div></div>
+<div class="bc"><div class="bcp" style="color:var(--a7)">10%</div><div class="bct">Formation</div><div class="bcd">Picomto, CESI, souvent oublié !</div></div>
+</div>
+<div class="bcn"><strong>💡 Piège classique :</strong> 80% en matériel/logiciel, 0% en intégration et formation. Résultat : outils puissants que personne n'utilise. Les meilleurs projets investissent <strong>≥20% en intégration + formation</strong>.</div>
+</div>
+</div>
+
+<script>function S(i){document.querySelectorAll('.sc').forEach((e,j)=>e.classList.toggle('on',j===i));document.querySelectorAll('.nav button').forEach((b,j)=>b.classList.toggle('on',j===i));window.scrollTo({top:document.getElementById('nav').offsetTop-10,behavior:'smooth'})}</script>
+</body>
+</html>
